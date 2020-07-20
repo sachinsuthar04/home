@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "385504222997",
+    "firebase_url": "https://homelife-c61fa.firebaseio.com",
+    "project_id": "homelife-c61fa",
+    "storage_bucket": "homelife-c61fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385504222997:android:25397a2aeb3c2ecd33d31c",
+        "android_client_info": {
+          "package_name": "com.home.home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385504222997-6g72cncqmu92oqhqbthgui8c7bg69uqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWeSoqyBjnajGXPPsjtwX8gCV60N1fdF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385504222997-6g72cncqmu92oqhqbthgui8c7bg69uqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

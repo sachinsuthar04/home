@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_picker_dialog.dart';
-import 'package:country_pickers/country_picker_dropdown.dart';
 import 'package:country_pickers/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -12,10 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:home/Network/ApiStateListener.dart';
 import 'package:home/Network/RestDatasource.dart';
 import 'package:home/utils/HexColor.dart';
-import 'package:home/utils/RouteTransition/FadeRoute.dart';
 import 'package:home/utils/Utils.dart';
 import 'package:keyboard_avoider/keyboard_avoider.dart';
-
 
 
 class LoginScreen extends StatefulWidget {
@@ -56,8 +53,14 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                           FocusScope.of(context).unfocus();
                         },
                         child: Container(
-                          height: MediaQuery.of(context).size.height,
-                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: ExactAssetImage("assets/img/login_bg.png"),
@@ -73,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                   alignment: Alignment.topCenter,
                                   margin: EdgeInsets.only(top: 80.0),
                                   child: Wrap(
-                                    crossAxisAlignment: WrapCrossAlignment.center,
+                                    crossAxisAlignment: WrapCrossAlignment
+                                        .center,
                                     direction: Axis.vertical,
                                     children: <Widget>[
                                       Image.asset(
@@ -98,13 +102,17 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                 Container(
                                   margin: EdgeInsets.only(top: 50),
                                   child: Wrap(
-                                    crossAxisAlignment: WrapCrossAlignment.center,
+                                    crossAxisAlignment: WrapCrossAlignment
+                                        .center,
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 12, right: 12),
                                         child: Container(
-                                          width: MediaQuery.of(context).size.width,
+                                          width: MediaQuery
+                                              .of(context)
+                                              .size
+                                              .width,
                                           height: 46,
                                           decoration: new BoxDecoration(
                                             color: Colors.white,
@@ -114,7 +122,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                           child: Row(
                                             children: <Widget>[
                                               Padding(
-                                                padding: const EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(
+                                                    8.0),
                                                 child: Image.asset(
                                                   "assets/img/login_call.png",
                                                   height: 20,
@@ -124,7 +133,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                               ),
                                               GestureDetector(
                                                   onTap: _openCountryPickerDialog,
-                                                  child: _buildDialogItemField(_selectedDialogCountry)),
+                                                  child: _buildDialogItemField(
+                                                      _selectedDialogCountry)),
 //                                          Padding(
 //                                            padding: const EdgeInsets.all(8.0),
 //                                            child: Image.asset(
@@ -155,8 +165,9 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                                       fontSize: 16,
                                                       fontFamily: 'PoppinsMedium'),
                                                   onChanged: (String value) {
-                                                    if(value.length == 10){
-                                                      FocusScope.of(context).unfocus();
+                                                    if (value.length == 10) {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
                                                     }
                                                   },
                                                 ),
@@ -201,7 +212,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                                       text:
                                                       '      Terms & Conditions',
                                                       style: TextStyle(
-                                                          color: HexColor("77b2fe"),
+                                                          color: HexColor(
+                                                              "77b2fe"),
                                                           fontSize: 13.5,
                                                           fontFamily: 'PoppinsSemiBold'
                                                       ),
@@ -220,7 +232,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                                   TextSpan(
                                                       text: 'Privacy Policy',
                                                       style: TextStyle(
-                                                          color: HexColor("77b2fe"),
+                                                          color: HexColor(
+                                                              "77b2fe"),
                                                           fontSize: 13.5,
                                                           fontFamily: 'PoppinsSemiBold'),
                                                       recognizer:
@@ -243,9 +256,15 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                   height: 42.0,
                                   margin:
                                   EdgeInsets.only(top: 60, left: 12, right: 12),
-                                  width: MediaQuery.of(context).size.width,
+                                  width: MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width,
                                   child: ButtonTheme(
-                                    minWidth: MediaQuery.of(context).size.width,
+                                    minWidth: MediaQuery
+                                        .of(context)
+                                        .size
+                                        .width,
                                     child: RaisedButton(
                                       shape: new RoundedRectangleBorder(
                                           borderRadius:
@@ -288,7 +307,8 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                                                     fontSize: 14.5),
                                                 recognizer: TapGestureRecognizer()
                                                   ..onTap = () {
-                                                  Utils.showToast("Sign up screen");
+                                                    Utils.showToast(
+                                                        "Sign up screen");
 //                                                    Navigator.push(
 //                                                        context,
 //                                                        FadeRoute(
@@ -310,7 +330,7 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
 
 
   void LoginResetButtonPressed() {
-    phoneNo = "+"+_selectedDialogCountry.phoneCode + phonecontroller.text;
+    phoneNo = "+" + _selectedDialogCountry.phoneCode + phonecontroller.text;
     _selectedDialogCountry.name;
     _selectedDialogCountry.iso3Code;
     _selectedDialogCountry.isoCode;
@@ -344,9 +364,10 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
     });
 
     if (data != null) {
-      Utils.showToast(data.toString().substring(10,data.toString().length - 1));
+      Utils.showToast(data.toString().substring(10, data
+          .toString()
+          .length - 1));
     }
-
   }
 
   @override
@@ -360,7 +381,6 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
 
   @override
   Future<void> onSuccess(data) async {
-
     setState(() {
       isLoading = false;
     });
@@ -395,42 +415,47 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
 //    api.login(this.phoneNo);
   }
 
-  Widget _buildDialogItem(Country country) => Wrap(
-    children: <Widget>[
-      CountryPickerUtils.getDefaultFlagImage(country),
-      SizedBox(width: 8.0),
-      Text("+${country.phoneCode}"),
-      SizedBox(width: 8.0),
-      Flexible(child: Text(country.name))
-    ],
-  );
-
-  Widget _buildDialogItemField(Country country) => Wrap(
-    children: <Widget>[
-      CountryPickerUtils.getDefaultFlagImage(country),
-    ],
-  );
-
-  void _openCountryPickerDialog() => showDialog(
-    context: context,
-    builder: (context) => Theme(
-      data: Theme.of(context).copyWith(primaryColor: HexColor("77b2fe")),
-      child: CountryPickerDialog(
-        titlePadding: EdgeInsets.all(8.0),
-        searchCursorColor: HexColor("77b2fe"),
-        searchInputDecoration: InputDecoration(hintText: 'Search...'),
-        isSearchable: true,
-        title: Text('Select your phone code'),
-        onValuePicked: (Country country) =>
-            setState(() => _selectedDialogCountry = country),
-        itemBuilder: _buildDialogItem,
-        priorityList: [
-          CountryPickerUtils.getCountryByIsoCode('IN'),
-          CountryPickerUtils.getCountryByIsoCode('US'),
-          CountryPickerUtils.getCountryByIsoCode('CN'),
+  Widget _buildDialogItem(Country country) =>
+      Wrap(
+        children: <Widget>[
+          CountryPickerUtils.getDefaultFlagImage(country),
+          SizedBox(width: 8.0),
+          Text("+${country.phoneCode}"),
+          SizedBox(width: 8.0),
+          Flexible(child: Text(country.name))
         ],
-      ),
-    ),
-  );
+      );
+
+  Widget _buildDialogItemField(Country country) =>
+      Wrap(
+        children: <Widget>[
+          CountryPickerUtils.getDefaultFlagImage(country),
+        ],
+      );
+
+  void _openCountryPickerDialog() =>
+      showDialog(
+        context: context,
+        builder: (context) =>
+            Theme(
+              data: Theme.of(context).copyWith(
+                  primaryColor: HexColor("77b2fe")),
+              child: CountryPickerDialog(
+                titlePadding: EdgeInsets.all(8.0),
+                searchCursorColor: HexColor("77b2fe"),
+                searchInputDecoration: InputDecoration(hintText: 'Search...'),
+                isSearchable: true,
+                title: Text('Select your phone code'),
+                onValuePicked: (Country country) =>
+                    setState(() => _selectedDialogCountry = country),
+                itemBuilder: _buildDialogItem,
+                priorityList: [
+                  CountryPickerUtils.getCountryByIsoCode('IN'),
+                  CountryPickerUtils.getCountryByIsoCode('US'),
+                  CountryPickerUtils.getCountryByIsoCode('CN'),
+                ],
+              ),
+            ),
+      );
 
 }
