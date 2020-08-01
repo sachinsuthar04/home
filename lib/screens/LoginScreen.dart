@@ -85,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> implements ApiStateListener {
                 onPressed: () {
                   FirebaseAuth.instance.currentUser().then((user) {
                     if (user != null) {
+
                       Navigator.of(context).pop();
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DashboardPage()));

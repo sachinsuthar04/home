@@ -44,6 +44,7 @@ dependencies:
   flutter_html: ^0.8.2
   intl: ^0.16.1
   url_launcher: ^5.4.11
+  lite_rolling_switch: ^0.1.1
   webview_flutter: #^0.3.4
     git:
       url: git://github.com/jaumard/plugins
